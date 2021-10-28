@@ -1,0 +1,101 @@
+******************1************************
+class Shape(ABC):
+    def _init_(self, shape):
+        self.shape = shape
+
+    @abstractmethod
+    def area(self):
+        pass
+
+class Rectangle(Shape):
+    def _init_(self, length, breadth):
+        Shape._init_(self, 'Rectangle')
+        self.length = length
+        self.breadth = breadth
+
+    def area(self):
+        return self.length*self.breadth
+
+class Circle(Shape):
+    def _init_(self, radius):
+        Shape._init_(self, 'Circle')
+        self.radius = radius
+
+    def area(self):
+        return round((math.pi)(self.radius*2),3)
+
+class Square(Shape):
+    def _init_(self, side):
+        Shape._init_(self, 'Square')
+        self.side = side
+
+    def area(self):
+        return self.side*self.side
+
+sq = Square(5)
+print("Area of square   :", sq.area())
+rect = Rectangle(2,3)
+print("Area of rectangle:", rect.area())
+c = Circle(4)
+print("Area of circle   :", c.area())
+
+
+************************2*************************
+class Travel:
+
+  def _init_(self, travel):
+    self.travel = travel
+
+  def __number_of_passangers(self):
+    pass
+
+  def distance(self):
+    pass
+
+  def mode(self):
+    pass
+
+class train(Travel):
+
+  def _init_(self, total_passangers):
+    self.total_passangers = total_passangers
+
+  def cost_of_transport(self):
+    print(self.total_passangers*60)
+
+class bus(Travel):
+
+  def _init_(self, total_passangers):
+    self.total_passangers = total_passangers
+
+  def cost_of_transport(self):
+    print(self.total_passangers*100)
+
+mode1 = train(1056)
+mode1.cost_of_transport()
+
+mode2 = bus(60)
+mode2.cost_of_transport()
+
+***********************3*************************
+class Car:
+
+  def _init_(self, model_no):
+    self.model_no = model_no
+
+  def print_model_no(self):
+    print(self.model_no)
+
+c1 = Car("model no. of c1 = a123")
+c1.print_model_no()
+
+c2 = Car("model no. of c2 = b123")
+c2.print_model_no()
+print("\n")
+
+var = c1
+c1 = c2
+c2 = var
+
+c1.print_model_no()
+c2.print_model_no()
